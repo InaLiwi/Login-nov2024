@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block titulo %} reserva {% endblock %}
+{% block titulo %} libro {% endblock %}
 
 {% block contenido %} 
 
 <div class="card mt-5">
     <div class="card-header">
-        <a name="" id="" class="btn" href="{% url 'crear_reserva' %}" role="button">
-            <i class="fas fa-plus"></i> Nueva reserva
+        <a name="" id="" class="btn" href="{% url 'crear_libro' %}" role="button">
+            <i class="fas fa-plus"></i> Nueva libro
         </a>
     </div>
     <div class="card-body">
@@ -15,25 +15,24 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">ID Usuario</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Rol</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for reserva in reservas %}
+                    {% for libro in libros %}
                     <tr class="">
-                        <td scope="row">{{ reserva.reserva_id }}</td>
-                        <td>{{ reserva.reserva_nombre_sala }}</td>
-                        <td>{{ reserva.reserva_nombre_usuario }}</td>
-                        <td>{{ reserva.reserva_fecha}}</td>
-                        <td>{{ reserva.reserva_hora}}</td>
-                        <td>{{ reserva.reserva_duracion}}</td>
+                        <td scope="row">{{ libro.libro_id }}</td>
+                        <td>{{ libro.libro_nombre_sala }}</td>
+                        <td>{{ libro.libro_nombre_libro }}</td>
+                        <td>{{ libro.libro_fecha}}</td>
+                        <td>{{ libro.libro_hora}}</td>
+                        <td>{{ libro.libro_duracion}}</td>
                         <td>
-                            <a name="" id="" class="btn" href="{% url 'editar_reserva' reserva.reserva_id%}" role="button">
+                            <a name="" id="" class="btn" href="{% url 'editar_libro' libro.libro_id%}" role="button">
                                 <i class="fas fa-edit"></i> Editar
                             </a>
-                            <a name="" id="" class="btn" href="{% url 'eliminar_reserva' reserva.reserva_id %}" role="button">
+                            <a name="" id="" class="btn" href="{% url 'eliminar_libro' libro.libro_id %}" role="button">
                                 <i class="fas fa-trash-alt"></i> Eliminar
                             </a>
                         </td>
@@ -43,7 +42,7 @@
             </table>
         </div>
     </div>
-    <div class="card-footer text-muted">Todos los usuarios pueden añadir, ver, modificar y eliminar reservas</div>
+    <div class="card-footer text-muted">Todos los libros pueden añadir, ver, modificar y eliminar libros</div>
 </div>
 
 {% endblock %}
