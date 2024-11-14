@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render,  get_object_or_404
-from .models import xxx
+from .models import login
 from .forms import xxx
 
 # Create your views here.
@@ -15,29 +15,12 @@ def login(request):
 # USUARIOS:
 
 
-def reservas(request):
-    reservas = Reserva.objects.all()
-    return render(request, 'reservas/index.html', {'reservas': reservas})
+def usuario(request):
+    usuario = login.objects.all()
+    return render(request, 'usuarios/index.html')
 
-def crear_reserva(request):
-    formulario = ReservaForm(request.POST or None, request.FILES or None)
-    if formulario.is_valid():
-        formulario.save()
-        return redirect('reservas')
-    return render(request, 'reservas/crear.html', {'formulario':formulario})
 
-def editar_reserva(request, reserva_id):
-    reserva = get_object_or_404(Reserva, reserva_id=reserva_id)
-    if request.method == 'POST':
-        formulario = ReservaForm(request.POST, request.FILES, instance=reserva)
-        if formulario.is_valid():
-            formulario.save()  
-            return redirect('reservas')  
-    else:
-        formulario = ReservaForm(instance=reserva)  
-    return render(request, 'reservas/editar.html', {'formulario': formulario})
-
-def eliminar_reserva(request, reserva_id):
-    reserva = Reserva.objects.get(reserva_id = reserva_id)
-    reserva.delete()
-    return redirect('reservas')
+def eliminar_usuario(request, usuario_nombre):
+    usuario = login.objects.get(usuario_nombre = usuario_nombre)
+    usuario.delete()
+    return redirect('login')
