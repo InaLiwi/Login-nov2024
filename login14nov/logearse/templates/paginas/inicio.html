@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-primary text-white">
+                        <h2>Bienvenido al Sistema de Gestión de Reservaciones de Salas de Reuniones</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">Gestiona fácilmente las salas de reuniones y haz tus reservas para eventos o reuniones en INACAP.</p>
+                        <p>Este sistema te permitirá:</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">Ver todas las salas disponibles</li>
+                            <li class="list-group-item">Crear, actualizar y eliminar salas</li>
+                            <li class="list-group-item">Hacer reservaciones de salas para reuniones</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="{% url 'listar_salas' %}" class="btn btn-primary btn-lg">Crear usuario</a>
+                            <a href="{% url 'crear_reservacion' %}" class="btn btn-secondary btn-lg">Ingresar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}
