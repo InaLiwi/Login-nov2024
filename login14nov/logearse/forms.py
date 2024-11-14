@@ -1,10 +1,10 @@
 from django import forms
 
-from .models import Usuario
+from .models import login
 
-class ReservaForm(forms.ModelForm):
+class UsuarioForm(forms.ModelForm):
     class Meta:
-        model = Usuario
+        model = login
         fields = '__all__'
         widgets = {
             'usuario_nombre': forms.TextInput(attrs={'type': 'text'}),
