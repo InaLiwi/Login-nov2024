@@ -15,7 +15,6 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">ID Usuario</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Rol</th>
                     </tr>
@@ -23,12 +22,8 @@
                 <tbody>
                     {% for usuario in usuarios %}
                     <tr class="">
-                        <td scope="row">{{ usuario.usuario_id }}</td>
-                        <td>{{ usuario.usuario_nombre_sala }}</td>
-                        <td>{{ usuario.usuario_nombre_usuario }}</td>
-                        <td>{{ usuario.usuario_fecha}}</td>
-                        <td>{{ usuario.usuario_hora}}</td>
-                        <td>{{ usuario.usuario_duracion}}</td>
+                        <td scope="row">{{ usuario.usuario_nombre }}</td>
+                        <td>{{ usuario.usuario_contraseña }}</td>
                         <td>
                             <a name="" id="" class="btn" href="{% url 'editar_usuario' usuario.usuario_id%}" role="button">
                                 <i class="fas fa-edit"></i> Editar
