@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render,  get_object_or_404
 from .models import login
-from .forms import xxx
+from .forms import *
 
 # Create your views here.
 
